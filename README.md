@@ -1,8 +1,7 @@
 # Arch Installer
 
 <div align="center">
-<img src="[https://github.com/archlinux/archinstall/raw/master/docs/logo.png](https://github.com/archlinux/archinstall/raw/master/docs/logo.png)" alt="Archinstall Logo" width="200"/>
-
+<img src="https://github.com/archlinux/archinstall/raw/master/docs/logo.png" alt="drawing" width="200"/>
 **A guided/automated Arch Linux installer and Python library.**
 
 </div>
