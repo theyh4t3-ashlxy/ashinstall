@@ -1,100 +1,100 @@
-# Arch Installer
+# arch installer
 
 <div align="center">
-<img src="https://github.com/archlinux/archinstall/raw/master/docs/logo.png" alt="drawing" width="200"/>
+<img src="[https://github.com/archlinux/archinstall/raw/master/docs/logo.png](https://github.com/archlinux/archinstall/raw/master/docs/logo.png)" alt="drawing" width="200"/>
 
-  **A guided/automated Arch Linux installer and Python library.**
+**a guided/automated arch linux installer and python library.**
 
 </div>
 
-`archinstall` is a guided installer that follows the [Arch Linux Principles](https://wiki.archlinux.org/index.php/Arch_Linux#Principles). It also functions as a powerful **Python library** to manage services, packages, and system configurations—usually from a live medium or an existing installation.
+`archinstall` is a guided installer that follows the [arch linux principles](https://wiki.archlinux.org/index.php/Arch_Linux#Principles). it also functions as a powerful **python library** to manage services, packages, and system configurations—usually from a live medium or an existing installation.
 
 ---
 
-## 💬 Community & Support
+## 💬 community & support
 
-* **Discord:** [Join our server](https://discord.gg/aDeMffrxNg)
-* **Matrix:** [#archinstall:matrix.org](https://matrix.to/#/#archinstall:matrix.org)
-* **IRC:** [#archinstall@irc.libera.chat:6697](https://web.libera.chat/?channel=#archinstall)
-* **Docs:** [Official Documentation](https://archinstall.archlinux.page/)
+* **discord:** [join our server](https://discord.gg/aDeMffrxNg)
+* **matrix:** [#archinstall:matrix.org](https://matrix.to/#/#archinstall:matrix.org)
+* **irc:** [#archinstall@irc.libera.chat:6697](https://web.libera.chat/?channel=#archinstall)
+* **docs:** [official documentation](https://archinstall.archlinux.page/)
 
 ---
 
-## 🚀 Getting Started
+## 🚀 getting started
 
-### 1. Installation
+### 1. installation
 
 > [!TIP]
-> You are `root` by default on the Arch ISO. If running from an existing system, use `sudo`.
+> you are `root` by default on the arch iso. if running from an existing system, use `sudo`.
 
-| Method | Command |
+| method | command |
 | --- | --- |
-| **Official ISO (Pre-installed)** | `archinstall` |
-| **Pacman (Latest Release)** | `pacman -Sy archinstall` |
-| **Pip (Edge)** | `pip install --upgrade archinstall` |
-| **Git (Development)** | `git clone https://github.com/archlinux/archinstall` |
+| **official iso (pre-installed)** | `archinstall` |
+| **pacman (latest release)** | `pacman -Sy archinstall` |
+| **pip (edge)** | `pip install --upgrade archinstall` |
+| **git (development)** | `git clone https://github.com/archlinux/archinstall` |
 
-### 2. Running the Installer
+### 2. running the installer
 
-To start the **guided** menu:
+to start the **guided** menu:
 
 ```shell
 archinstall
 
 ```
 
-To run a **declarative** installation (using JSON):
+to run a **declarative** installation (using json):
 
 ```shell
 archinstall --config user_configuration.json --creds user_credentials.json
 
 ```
 
-*Note: You can auto-generate these files by completing the guided menu and selecting **Save configuration**.*
+*note: you can auto-generate these files by completing the guided menu and selecting **save configuration**.*
 
 ---
 
-## 🔧 Advanced Usage
+## 🔧 advanced usage
 
-### Scripting Your Own Install
+### scripting your own install
 
-You can use `archinstall` as a library to build custom, automated deployment scripts.
+you can use `archinstall` as a library to build custom, automated deployment scripts.
 
-* [Interactive Script Example](https://github.com/archlinux/archinstall/blob/master/archinstall/scripts/guided.py)
-* [Fully Automated Script Example](https://github.com/archlinux/archinstall/blob/master/examples/full_automated_installation.py)
+* [interactive script example](https://github.com/archlinux/archinstall/blob/master/archinstall/scripts/guided.py)
+* [fully automated script example](https://github.com/archlinux/archinstall/blob/master/examples/full_automated_installation.py)
 
-### Credentials & Encryption
+### credentials & encryption
 
-By default, user account passwords are hashed with `yescrypt`. Disk encryption passwords, however, must be handled specifically:
+by default, user account passwords are hashed with `yescrypt`. disk encryption passwords, however, must be handled specifically:
 
-* **Plaintext:** Stored in `user_credentials.json` (Default).
-* **Encrypted:** You can encrypt the credentials file itself when saving. To decrypt during install, use the `--creds-decryption-key` flag or set the `ARCHINSTALL_CREDS_DECRYPTION_KEY` environment variable.
+* **plaintext:** stored in `user_credentials.json` (default).
+* **encrypted:** you can encrypt the credentials file itself when saving. to decrypt during install, use the `--creds-decryption-key` flag or set the `ARCHINSTALL_CREDS_DECRYPTION_KEY` environment variable.
 
 ---
 
-## 🌍 Localization & Fonts
+## 🌍 localization & fonts
 
-The installer supports multiple languages, but the Arch ISO does not include all necessary fonts.
+the installer supports multiple languages, but the arch iso does not include all necessary fonts.
 
-* **Issue:** Non-Latin characters (e.g., Cyrillic, Greek) may appear as boxes.
-* **Fix:** Set a compatible font manually before running the installer:
+* **issue:** non-latin characters (e.g., cyrillic, greek) may appear as boxes.
+* **fix:** set a compatible font manually before running the installer:
+
 ```shell
 setfont LatGrkCyr-8x16
 
 ```
 
-
-
 ---
 
-## 🛠 Testing & Development
+## 🛠 testing & development
 
-### Testing on a Live ISO
+### testing on a live iso
 
-If you need to test a specific branch while on the ISO:
+if you need to test a specific branch while on the iso:
 
-1. Uninstall the pre-installed version: `pip uninstall --break-system-packages archinstall`
-2. Clone and run:
+1. uninstall the pre-installed version: `pip uninstall --break-system-packages archinstall`
+2. clone and run:
+
 ```shell
 git clone https://github.com/archlinux/archinstall
 cd archinstall
@@ -102,9 +102,7 @@ python -m archinstall
 
 ```
 
-
-
-### Testing via QEMU
+### testing via qemu
 
 ```bash
 qemu-system-x86_64 -enable-kvm -m 4096 -cpu host \
@@ -115,23 +113,21 @@ qemu-system-x86_64 -enable-kvm -m 4096 -cpu host \
 
 ---
 
-## ❓ FAQ
+## ❓ faq
 
-**Keyring is out of date?**
-If you encounter signature errors, update the keyring first:
+**keyring is out of date?**
+if you encounter signature errors, update the keyring first:
 `pacman -Sy archlinux-keyring`
 
-**How do I dual boot with Windows?**
+**how do i dual boot with windows?**
 
-1. Create unallocated space in Windows.
-2. In `archinstall`, choose **Manual Partitioning**.
-3. Create a new partition in the free space for `/`.
-4. Assign the existing Windows **EFI partition** (ESP) to `/boot`.
+1. create unallocated space in windows.
+2. in `archinstall`, choose **manual partitioning**.
+3. create a new partition in the free space for `/`.
+4. assign the existing windows **efi partition** (esp) to `/boot`.
 
 ---
 
-## 🤝 Contributing
+## 🤝 contributing
 
-Contributions are welcome! Please read our [CONTRIBUTING.md](https://github.com/archlinux/archinstall/blob/master/CONTRIBUTING.md) to get started with bug reports, feature requests, or translations.
-
-**Would you like me to refine the "Advanced" command section into a more detailed table of CLI flags?**
+contributions are welcome! please read our [contributing.md](https://github.com/archlinux/archinstall/blob/master/CONTRIBUTING.md) to get started with bug reports, feature requests, or translations.
